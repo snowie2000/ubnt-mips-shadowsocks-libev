@@ -72,7 +72,8 @@ echo -e "$green Installing shadowsocks-libev...$end"
 cd
 git clone https://github.com/shadowsocks/shadowsocks-libev
 cd shadowsocks-libev
-git checkout v$shadowsocks_ver -b v$shadowsocks_ver
+#git checkout v$shadowsocks_ver -b v$shadowsocks_ver
+git checkout master
 git submodule update --init --recursive && ./autogen.sh
 LIBS="-lpthread -lm" \
 LDFLAGS="-Wl,-static -static -static-libgcc -L$prefix_path/libev/lib" \
